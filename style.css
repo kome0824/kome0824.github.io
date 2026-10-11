@@ -86,7 +86,7 @@ img{max-width:100%; display:block;}
 .nav a[aria-current="page"]{color:var(--accent); border-color:var(--line); background:var(--panel);}
 
 /* ---------- ヒーロー ---------- */
-.hero{padding:78px 0 62px; text-align:center;}
+.hero{padding:78px 20px 62px; text-align:center;}
 .eyebrow{
   display:inline-block; font-size:12px; letter-spacing:.22em;
   color:var(--accent); border:1px solid rgba(95,240,200,.4);
@@ -155,6 +155,43 @@ section{padding:56px 0;}
 .card-body h3{margin:0 0 6px; font-size:17px; color:#fff; line-height:1.5;}
 .card-body .meta{font-size:12px; color:var(--accent); letter-spacing:.08em;}
 .card-body p{margin:9px 0 0; font-size:13px; color:var(--text-dim); line-height:1.8;}
+
+/* カード左上の印（BROWSER・NEW など、いくつでも横に並ぶ） */
+.badges{position:absolute; left:0; top:0; z-index:2; display:flex;}
+.badges .badge{position:static;}
+.badge.new{background:var(--accent-2); color:#fff;}
+
+/* 遊び方・作り方の小さな札（ブラウザ／スマホ対応／Windows／ウディタ など） */
+.tags{display:flex; flex-wrap:wrap; gap:6px; margin-top:10px;}
+.tag{font-size:11px; padding:1px 8px; border:1px solid var(--line); color:var(--text-dim); background:var(--panel-2); letter-spacing:.04em;}
+.tag.play{border-color:rgba(95,240,200,.45); color:var(--accent);}
+
+/* 作品の絞り込み */
+.filter{display:flex; flex-wrap:wrap; gap:8px; margin:-6px 0 22px;}
+.filter button{
+  font:inherit; font-size:13px; padding:6px 14px; cursor:pointer;
+  border:1px solid var(--line); background:var(--panel); color:var(--text-dim);
+}
+.filter button:hover{color:#fff;}
+.filter button[aria-pressed="true"]{border-color:var(--accent); color:var(--accent); background:rgba(95,240,200,.08);}
+.card[hidden]{display:none;}
+
+/* 新作の紹介（トップページ） */
+.pickup{
+  display:grid; grid-template-columns:1.15fr 1fr; gap:0;
+  background:var(--panel); border:1px solid var(--accent-2);
+  box-shadow:8px 8px 0 rgba(255,95,158,.18);
+}
+.pickup .pic{position:relative; aspect-ratio:16/10; overflow:hidden; border-right:1px solid var(--line);}
+.pickup .pic img{width:100%; height:100%; object-fit:cover;}
+.pickup .txt{padding:26px 28px; display:flex; flex-direction:column; justify-content:center;}
+.pickup .label{font-size:12px; letter-spacing:.2em; color:var(--accent-2);}
+.pickup h3{margin:6px 0 4px; font-size:28px; color:#fff; line-height:1.35; text-shadow:2px 2px 0 rgba(255,95,158,.55);}
+.pickup .catch{margin:0 0 10px; color:var(--accent-3); font-size:14px;}
+.pickup p{margin:0; font-size:14px; color:var(--text-dim);}
+.pickup .acts{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
+.btn.play{border-color:var(--accent-3); color:var(--accent-3);}
+.btn.play:hover{background:var(--accent-3); color:var(--bg); box-shadow:5px 5px 0 rgba(255,207,95,.35);}
 
 /* カード下部のサブリンク（攻略ページなど） */
 .card-sub{
@@ -263,6 +300,7 @@ section{padding:56px 0;}
 .ss-grid a{border:1px solid var(--line); display:block; transition:transform .14s, box-shadow .14s, border-color .14s;}
 .ss-grid a:hover{transform:translate(-2px,-2px); border-color:var(--accent); box-shadow:5px 5px 0 rgba(95,240,200,.2);}
 .ss-grid img{width:100%; image-rendering:pixelated;}
+.ss-grid.tall{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}   /* 縦長（スマホ画面）のスクリーンショット用 */
 
 /* スクリーンショットの拡大表示 */
 .lb{
@@ -298,9 +336,16 @@ body.lb-lock{ overflow:hidden; }
 }
 .site-foot .counter{margin-top:14px;}
 
+@media (max-width:760px){
+  .pickup{grid-template-columns:1fr;}
+  .pickup .pic{border-right:none; border-bottom:1px solid var(--line);}
+  .pickup .txt{padding:20px 20px 22px;}
+}
 @media (max-width:640px){
   .site-head .wrap{height:auto; padding-top:10px; padding-bottom:10px; flex-direction:column; align-items:flex-start;}
-  .hero{padding:52px 0 44px;}
+  .hero{padding:52px 20px 44px;}
+  .hero p br{display:none;}   /* 狭い画面では改行を外して自然に折り返す */
+  .hero-actions .btn{padding:12px 18px;}
   section{padding:44px 0;}
   .spec th{width:100px; padding:10px 12px;}
   .spec td{padding:10px 12px;}

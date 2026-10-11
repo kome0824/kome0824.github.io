@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>広く、それなりに深いHP ｜ WOLF RPGエディター製ゲーム置き場</title>
-<meta name="description" content="WOLF RPGエディターで制作したフリーゲームを公開しています。">
+<title>広く、それなりに深いHP ｜ 自作フリーゲーム置き場</title>
+<meta name="description" content="自作のフリーゲームを公開しています。ブラウザでそのまま遊べる作品と、WOLF RPGエディター製のダウンロード作品があります。">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DotGothic16&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
@@ -31,12 +31,35 @@
   <!-- ============ ヒーロー ============ -->
   <div class="hero wrap">
     <h1 class="pixel">広く、<br>それなりに深いHP</h1>
-    <p>WOLF RPGエディターで制作したフリーゲームを公開しています。<br>短いものから歯ごたえのあるものまで、気になったものからどうぞ。</p>
+    <p>自作のフリーゲームを公開しています。<br>ブラウザでそのまま遊べるものから、WOLF RPGエディター製のダウンロード作品まで。<br>短いものから歯ごたえのあるものまで、気になったものからどうぞ。</p>
     <div class="hero-actions">
-      <a class="btn pixel" href="#games">▶ 作品を見る</a>
+      <a class="btn pixel" href="#pickup">▶ 新作を見る</a>
+      <a class="btn pixel" href="#games">作品一覧</a>
       <a class="btn ghost pixel" href="http://broadandlittledeeply.blog28.fc2.com/">ブログ</a>
     </div>
   </div>
+
+  <!-- ============ 新作 ============ -->
+  <section id="pickup" class="wrap">
+    <div class="sec-head">
+      <h2 class="pixel">新作</h2>
+      <span class="en pixel">PICK UP</span>
+    </div>
+    <div class="pickup">
+      <a class="pic" href="game/hyakki.html"><img src="game/img/hyakki_card.jpg" alt="百鬼めくり のスクリーンショット" loading="lazy"></a>
+      <div class="txt">
+        <div class="label pixel">NEW ／ 2026 ／ ブラウザで遊べる</div>
+        <h3 class="pixel">百鬼めくり</h3>
+        <p class="catch">めくって、そろえて、百鬼を祓え。</p>
+        <p>手番なし・待ったなしの神経衰弱ローグライク。同じ札が2枚開いた瞬間に技が出て、続けてそろえると「百鬼夜行」。夜道を三幕進み、幕の主を祓え。</p>
+        <div class="tags"><span class="tag play">ブラウザ</span><span class="tag play">スマホ</span><span class="tag play">PC（キーボード対応）</span><span class="tag">エンドレスモード</span></div>
+        <div class="acts">
+          <a class="btn play pixel" href="hyakki-mekuri/">▶ ブラウザで遊ぶ</a>
+          <a class="btn ghost pixel" href="game/hyakki.html">作品ページ</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ ゲーム ============ -->
   <section id="games" class="wrap">
@@ -45,9 +68,31 @@
       <span class="en pixel">GAMES</span>
     </div>
 
+    <div class="filter pixel" role="group" aria-label="作品の絞り込み">
+      <button type="button" data-f="all" aria-pressed="true">すべて</button>
+      <button type="button" data-f="web" aria-pressed="false">ブラウザで遊べる</button>
+      <button type="button" data-f="dl" aria-pressed="false">ダウンロード</button>
+    </div>
+
     <div class="games">
 
-      <div class="card">
+      <div class="card" data-kind="web">
+        <a class="card-link" href="game/hyakki.html">
+          <div class="shot">
+            <div class="badges"><span class="badge pixel">BROWSER</span><span class="badge new pixel">NEW</span></div>
+            <span class="noimg pixel">NO IMAGE</span>
+            <img src="game/img/hyakki_card.jpg" alt="百鬼めくり のスクリーンショット" loading="lazy" onerror="this.remove()">
+          </div>
+          <div class="card-body">
+            <div class="meta pixel">2026 ／ 札合わせローグライク</div>
+            <h3>百鬼めくり</h3>
+            <p>めくって、そろえて、百鬼を祓え。待ったなしの神経衰弱で夜道を進む。スマホでもPCでも、ブラウザですぐ遊べます。</p>
+            <div class="tags"><span class="tag play">ブラウザ</span><span class="tag play">スマホ</span><span class="tag play">PC</span></div>
+          </div>
+        </a>
+      </div>
+
+      <div class="card" data-kind="dl">
         <a class="card-link" href="game/hoshinokokoro.html">
           <div class="shot">
             <span class="noimg pixel">NO IMAGE</span>
@@ -57,6 +102,7 @@
             <div class="meta pixel">2022 ／ 星の心収集アドベンチャー</div>
             <h3>星の心</h3>
             <p>キミの手で星の心を集めよう！第14回ウディコン参加作品。</p>
+            <div class="tags"><span class="tag">Windows</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
         <!-- 星の欠片＝星の心の攻略ページ。作品カードの下にぶら下げています -->
@@ -65,7 +111,7 @@
         </div>
       </div>
 
-      <div class="card">
+      <div class="card" data-kind="dl">
         <a class="card-link" href="game/heart.html">
           <div class="shot">
             <span class="noimg pixel">NO IMAGE</span>
@@ -75,11 +121,12 @@
             <div class="meta pixel">2013 ／ 探究心探索アドベンチャー</div>
             <h3>Heart</h3>
             <p>あなたの探究心、お見せください。第5回ウディコン参加作品。</p>
+            <div class="tags"><span class="tag">Windows</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-kind="dl">
         <a class="card-link" href="game/wind_girl.html">
           <div class="shot">
             <span class="noimg pixel">NO IMAGE</span>
@@ -89,11 +136,12 @@
             <div class="meta pixel">2011 ／ ステージクリア型アクション</div>
             <h3>風の少女</h3>
             <p>慣性と物理の法則を駆使して駆け抜ける、全10＋EX4ステージのアクション。第3回ウディコン参加作品。</p>
+            <div class="tags"><span class="tag">Windows</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-kind="dl">
         <a class="card-link" href="game/12gods.html">
           <div class="shot">
             <span class="noimg pixel">NO IMAGE</span>
@@ -103,11 +151,12 @@
             <div class="meta pixel">2010 ／ リアルタイムシミュレーション風RPG</div>
             <h3>12の神々と守られし人々</h3>
             <p>リアルタイムで変化する情勢のなか、魔王へ挑む時期は自分で決められる。らんぱ２参加作品。</p>
+            <div class="tags"><span class="tag">Windows</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-kind="dl">
         <a class="card-link" href="game/taichi.html">
           <div class="shot">
             <span class="noimg pixel">NO IMAGE</span>
@@ -117,11 +166,12 @@
             <div class="meta pixel">2010 ／ タイミングアクションレース</div>
             <h3>タイチ</h3>
             <p>タイミングよくキーを押して逃げ切ろう。むずかしさ3つ、エンディング3つの10分ゲーム。らんぱ２参加作品。</p>
+            <div class="tags"><span class="tag">Windows</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
       </div>
 
-      <div class="card">
+      <div class="card" data-kind="web">
         <a class="card-link" href="game/dot1.html">
           <div class="shot">
             <span class="badge pixel">BROWSER</span>
@@ -132,6 +182,7 @@
             <div class="meta pixel">2009 ／ RPG</div>
             <h3>．Dot ～始点／lost color～</h3>
             <p>色を失った世界に色を取り戻す物語。ブラウザ版で遊べます。第3回非公式ウディコン参加作品。</p>
+            <div class="tags"><span class="tag play">ブラウザ</span><span class="tag">ウディタ</span></div>
           </div>
         </a>
       </div>
@@ -146,6 +197,14 @@
       <span class="en pixel">NEWS</span>
     </div>
     <ul class="log">
+      <li>
+        <time class="pixel">2026.10.11</time>
+        <div class="body">新作<a href="game/hyakki.html">「百鬼めくり」</a>を公開しました（ブラウザで遊べます）</div>
+      </li>
+      <li>
+        <time class="pixel">2026.10.11</time>
+        <div class="body">サイトを少し作り変えました（作品の絞り込み・新作の紹介）</div>
+      </li>
       <li>
         <time class="pixel">2024.09.07</time>
         <div class="body"><a href="game/dot1.html">「．Dot ～始点／lost color～」</a>のブラウザ版を公開しました</div>
@@ -205,5 +264,12 @@
   </div>
 </footer>
 
+<script>
+// 作品の絞り込み（すべて／ブラウザで遊べる／ダウンロード）
+document.querySelectorAll('.filter button').forEach(b => b.addEventListener('click', () => {
+  document.querySelectorAll('.filter button').forEach(x => x.setAttribute('aria-pressed', x === b));
+  document.querySelectorAll('.games .card').forEach(c => c.hidden = b.dataset.f !== 'all' && c.dataset.kind !== b.dataset.f);
+}));
+</script>
 </body>
 </html>
