@@ -300,6 +300,9 @@ section{padding:56px 0;}
 .ss-grid a{border:1px solid var(--line); display:block; transition:transform .14s, box-shadow .14s, border-color .14s;}
 .ss-grid a:hover{transform:translate(-2px,-2px); border-color:var(--accent); box-shadow:5px 5px 0 rgba(95,240,200,.2);}
 .ss-grid img{width:100%; image-rendering:pixelated;}
+/* 縦長（スマホ画面）の紹介動画 */
+.pv{max-width:300px; margin:0 auto 34px; border:1px solid var(--line); background:var(--panel);}
+.pv video{display:block; width:100%; aspect-ratio:9/16; background:#000;}
 .ss-grid.tall{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));}   /* 縦長（スマホ画面）のスクリーンショット用 */
 
 /* スクリーンショットの拡大表示 */
