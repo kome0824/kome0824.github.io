@@ -187,6 +187,9 @@ section{padding:56px 0;}
 .pickup .txt{padding:26px 28px; display:flex; flex-direction:column; justify-content:center;}
 .pickup .label{font-size:12px; letter-spacing:.2em; color:var(--accent-2);}
 .pickup h3{margin:6px 0 4px; font-size:28px; color:#fff; line-height:1.35; text-shadow:2px 2px 0 rgba(255,95,158,.55);}
+.pickup h3 small{display:block; margin-top:2px; font-size:16px; text-shadow:none; color:var(--text-dim);}
+/* 横長の画像（OGPなど）を切らずに収める */
+.shot img.fit, .pickup .pic img.fit{object-fit:contain; background:#15131c;}
 .pickup .catch{margin:0 0 10px; color:var(--accent-3); font-size:14px;}
 .pickup p{margin:0; font-size:14px; color:var(--text-dim);}
 .pickup .acts{display:flex; flex-wrap:wrap; gap:10px; margin-top:20px;}
